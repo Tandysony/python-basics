@@ -56,7 +56,7 @@ print("7. The list after reverse is: %s" % x)
 print("----------------------")
 
 #   8. sort
-#       x.sort() put the items of x insorted order (sorted in place)
+#       x.sort() put the items of x in sorted order (sorted in place)
 #       sorted(x) returns a NEW sorted list without changing the original list x.
 x = ["a", 4.55, "work", "$"]
 x.sort()

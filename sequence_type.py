@@ -4,7 +4,7 @@ x = "My name is Tandysony"
 print(x[3])
 print("-"*40 + "1")
 
-# 2. slicing [start : end+1 : step]
+# 2. slicing [start : end-1 : step]
 print(x[1:4])
 print(x[1:10:2])
 print(x[3:])
