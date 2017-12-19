@@ -4,7 +4,7 @@ import sys
 int_max = sys.maxint
 print("max int in this system is: {} -- {}.".format(int_max, type(int_max)))
 
-# 'long' type
+# 'long' type (not available in Python 3)
 print(type(int_max+1))
 s_long = 48L
 print("s_long is: {} -- {}".format(s_long, type(s_long)))
@@ -31,7 +31,7 @@ print(round(14.99, 1))
 
 
 ## SUMMARY
-# 1. There are 3 types of numbers in Python 2.7: int, long, float & complex.
+# 1. There are 3 types of numbers in Python 2.7: 'int', 'long', 'float' & 'complex'. While, in Python 3, 'long' is no long available.
 # 2. 'int' will be converted to 'long' if it overflows
 # 3. Add an 'L' at the end of the int value to enforce a 'long' type
 # 4. User 'x.real' and 'x.imag' to get real part and imaginary part respectively, for a complex number 'x'.
