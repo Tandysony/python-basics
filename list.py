@@ -37,6 +37,10 @@ x.append(y) # '(1, 2)' will be a single element.
 x.append(z) # '["$", "DOG"]' will be a single element.
 print("4. The list after extending is: {}".format(x)) # output: 4. The list after extending is: ['a', 4.55, 'work', (1, 2), ['$', 'DOG']]
 print("4. The length of the list after extending: {}".format(len(x)))
+f = [True, "end"]
+x += f
+print("4. The list after concatenation is: {}".format(x))
+print("4. The length of the list after concatenation is: {}".format(len(x)))
 print("----------------------")
 
 #   5. insert: x.insert(index, item)
