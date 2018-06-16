@@ -120,3 +120,169 @@ The `help()` function displays the documentation string and help for its argumen
 The answer here is no. The modules with circular references to other objects, or to objects referenced from global namespaces, aren’t always freed on exiting Python.
 
 Plus, it is impossible to de-allocate portions of memory reserved by the C library.
+
+## 8. What is a dictionary in Python?
+
+Dictionary holds key-value pairs, similar to javascript `object`. A dictionary is mutable, and we can also use a comprehension to create it.
+
+## 9. What do you mean by `*args` and `**kwargs`?
+
+In cases when we don’t know how many arguments will be passed to a function, like when we want to pass a list or a tuple of values, we use `*args`.
+
+```python
+def func(*args):
+    for i in args:
+        print(i)  
+
+func(3,2,1,4,7) # <-- arguments
+```
+
+`**kwargs` takes keyword arguments when we don’t know how many there will be.
+
+```python
+def func(**kwargs):
+    for i in kwargs:
+        print(i,kwargs[i])
+
+func(a=1,b=2,c=7) # <-- keyword arguments
+```
+
+The words `args` and `kwargs` are convention, and we can use anything in their place.
+
+## Coding
+
+## 10. Write Python logic to count the number of capital letters in a file.
+
+```python
+import os
+
+file = os.path("path/to/the/file")
+with open(file,'r') as myFile:
+    count = 0
+    for i in myFile:
+        if i.isupper():
+            count++
+
+    print(count)
+```
+
+## 11. How would you randomize the contents of a list in-place?
+
+```python
+from random import shuffle
+
+shuffle(myList)
+```
+
+## 12. How will you set the starting value in generating random numbers?
+
+```python
+import random
+
+random.seed( 10 )
+print "Random number with seed 10 : ", random.random()
+
+# It will generate same random number
+random.seed( 10 )
+print "Random number with seed 10 : ", random.random()
+
+# It will generate same random number
+random.seed( 10 )
+print "Random number with seed 10 : ", random.random()
+```
+
+## 13. What is the difference between `del()` and `remove()` methods of list?
+
+To remove a list element, you can use either the `del` statement **if you know exactly which element(s) you are deleting** or the `remove()` method **if you do not know**.
+
+## 14. Function and method for `list`?
+
+**String special operators:**
+
+- `+` Concatenation - Adds values on either side of the operator
+
+- `*` Repetition - Creates new strings, concatenating multiple copies of the same string
+
+- `[]` Slice - Gives the character from the given index
+
+- `[ : ]` Range Slice - Gives the characters from the given range
+
+- `in` Membership - Returns true if a character exists in the given string
+
+- `not in` Membership - Returns true if a character does not exist in the given string
+
+- `r/R` Raw String - Suppresses actual meaning of Escape characters. The syntax for raw strings is exactly the same as for normal strings with the exception of the raw string operator, the letter "r," which precedes the quotation marks. The "r" can be lowercase (r) or uppercase (R) and must be placed immediately preceding the first quote mark.
+
+- `%` Format - Performs String formatting See at next section
+
+**Built in functions:**
+
+- `cmp(list1, list2)`: Compares elements of both lists.
+
+- `len(list)`: Gives the total length of the `list`.
+
+- `max(list)`: Returns item from the `list` with `max` value.
+
+- `min(list)`: Returns item from the `list` with `min` value.
+
+- `list(seq)`: Converts a `tuple` into `list`.
+
+**Built in methods:**
+
+- `list.append(obj)`: Appends object `obj` to `list`
+
+- `list.count(obj)`: Returns count of how many times `obj` occurs in `list`
+
+- `list.extend(seq)`: Appends the contents of `seq` to `list`
+
+- `list.index(obj)`: Returns the lowest index in `list` that `obj` appears
+
+- `list.insert(index, obj)`: Inserts object `obj` into `list` at offset index
+
+- `list.pop(obj=list[-1])`: Removes and returns last object or `obj` from `list`
+
+- `list.remove(obj)`: Removes object `obj` from `list`
+
+- `list.reverse()`: Reverses objects of `list` in place
+
+- `list.sort([func])`: Sorts objects of `list`, use `compare` func if given
+
+## 15. Function and method for strings.
+
+- `capitalize(str)`: Capitalizes first letter of string.
+
+- `isalnum(str)`: Returns `True` if string has **at least 1 character** and **all characters are alphanumeric** and false otherwise.
+
+- `isdigit(str)`: Returns true if string contains **only digits** and false otherwise.
+
+- `islower(str)`: Returns true if string has **at least 1 cased character** and all cased characters are **in lowercase** and false otherwise.
+
+- `isupper()`: Returns true if string has at least one cased character and all cased characters are in uppercase and false otherwise.
+
+- `isnumeric()`: Returns true if a unicode string contains only numeric characters and false otherwise.
+
+- `isspace()`: Returns true if string contains **only whitespace characters** and false otherwise.
+
+- `istitle()`: Returns true if string is properly "titlecased", e.g. "This Is Titlecased", and false otherwise.
+
+- `str.join(seq)`: Merges (concatenates) the string representations of elements in sequence `seq` into a string, with separator string.
+
+- `len(str)`: Returns the length of the string.
+
+- `str.ljust(width[, fillchar])`: Returns a space-padded string with the original string left-justified to a total of width column.
+
+- `str.lower()` or `upper()`: Converts all uppercase letters in string to lowercase, or the other way around.
+
+- `str.lstrip()`: Removes all leading whitespace in string.
+
+- `max(str)`: Returns the max alphabetical character from the string `str`.
+
+- `min(str)`: Returns the min alphabetical character from the string `str`.
+
+- `str.replace(old, new [, max])`: Replaces all occurrences of `old` in string with new or at most `max` occurrences if `max` given.
+
+- `strip([chars])`: Performs both `lstrip()` and `rstrip()` on string.
+
+- `str.swapcase()`: Inverts case for all letters in string.
+
+- `str.title()`: Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.
