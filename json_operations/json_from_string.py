@@ -59,7 +59,7 @@ print ("\n{}".format(new_string))
 
 ## SUMMARY
 # 1. To work with a JSON string object, use "json.loads(), json.dumps()". Pay attention to the 's' before the left parentheses
-# 2. The json
+# 2. The JSON decoder and endcoder are illustrated below:
 
 ## JSON Decoder
 # -------------------------------
