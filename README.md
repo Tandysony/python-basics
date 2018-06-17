@@ -286,3 +286,92 @@ To remove a list element, you can use either the `del` statement **if you know e
 - `str.swapcase()`: Inverts case for all letters in string.
 
 - `str.title()`: Returns "titlecased" version of string, that is, all words begin with uppercase and the rest are lowercase.
+
+## 16. `random` package for random date generating
+
+- `choice(seq)`: Returns a random item from a list, tuple, or string.
+
+- `randrange([start,] stop [,step])`: returns a randomly selected element from `range(start, stop, step)`, e.g., `randrange(0, 101, 2)` returns a random odd integer from 1 to 100 inclusive
+
+- `random()`: returns a random float `r`, such that `0` is less than or equal to `r` and `r` is less than `1`.
+
+- `seed([x])`: Sets the integer starting value used in generating random numbers. Call this function before calling any other random module function.
+
+- `sample(range(1000), 8)`: 8 random samples without replacement.
+
+## 17. JSON data in Python
+
+1.  To work with a JSON string object, use "json.loads(), json.dumps()". Pay attention to the 's' before the left parentheses
+2.  The JSON decoder and endcoder are illustrated below:
+
+**JSON Decoder**
+
+| JSON          | Python    |
+| ------------- | --------- |
+| object        | dict      |
+| array         | list      |
+| string        | unicode   |
+| number (int)  | int, long |
+| number (real) | float     |
+| true          | True      |
+| false         | False     |
+| null          | None      |
+
+**JSON Encoder**
+
+| Python           | JSON   |
+| ---------------- | ------ |
+| dict             | object |
+| list, tuple      | array  |
+| str, unicode     | string |
+| int, long, float | number |
+| True             | true   |
+| False            | false  |
+| None             | null   |
+
+3.  When load and dump JSON files, use `json.load()`, `json.dump()`
+4.  If `open('file_path')` raises `IOError: [Error 2] No such file or directory: 'aa.bb'`, use `getcwd()` to double check the current working directory.
+
+## 18. Class and subclass
+
+- Do not forget constructor `__init__`
+- The `__str__` is a special built-in method can be overridden.
+- When calling a method, do not forget `()` at the end.
+
+```python
+# base class
+class Pet(object):
+    def __init__(self, name, species):
+        self.name = name
+        self.species = species
+
+    def getName(self):
+        return self.name
+
+    def getSpecies(self):
+        return self.species
+
+    def __str__(self):
+        return ("{0} is a {1}".format(self.name, self.species))
+
+polly = Pet("Polly", "Parrot")
+print(polly)
+
+pet_name = polly.getName()
+print(pet_name)
+
+
+# sub-class
+class Dog(Pet):
+    def __init__(self, name, chases_cats):
+        Pet.__init__(self, name, "Dog")
+        self.chases_cats = chases_cats
+
+    def chasesCats(self):
+        return self.chases_cats
+
+rommy = Dog("Rommy", True)
+print(rommy.getSpecies())
+print(rommy.chasesCats())
+print("Does {0} , the {1}, chase cats? {2}".format(rommy.getName(), rommy.getSpecies(), rommy.chasesCats() ))
+```
