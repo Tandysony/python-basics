@@ -76,7 +76,7 @@ def _send(sender, to, subject='', body='', html_content='', reply_to=None, cc=No
 
     message.mixed_subtype = 'related'  # This is critical, otherwise images will be displayed as attachments!
     ...
-    img.add_header('Content-ID', '<rndgo-logo>')
+
     img.add_header('Content-Disposition', 'inline', filename='filename')
     message.attach(img)
 ```
