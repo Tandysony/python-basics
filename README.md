@@ -197,6 +197,14 @@ To remove a list element, you can use either the `del` statement **if you know e
 
 ## 14. Function and method for `list`?
 
+- List comprehension can be:
+
+```python
+nums = [x**2 if x % 2 == 0 else x**3 for x in range(10)]
+print(nums)
+# [0, 1, 4, 27, 16, 125, 36, 343, 64, 729]
+```
+
 **String special operators:**
 
 - `+` Concatenation - Adds values on either side of the operator
@@ -215,7 +223,7 @@ To remove a list element, you can use either the `del` statement **if you know e
 
 - `%` Format - Performs String formatting See at next section
 
-**Built in functions:**
+**Built-in functions:**
 
 - `cmp(list1, list2)`: Compares elements of both lists.
 
@@ -227,7 +235,7 @@ To remove a list element, you can use either the `del` statement **if you know e
 
 - `list(seq)`: Converts a `tuple` into `list`.
 
-**Built in methods:**
+**Python list methods:**
 
 - `list.append(obj)`: Appends object `obj` to `list`
 
@@ -247,7 +255,7 @@ To remove a list element, you can use either the `del` statement **if you know e
 
 - `list.sort([func])`: Sorts objects of `list`, use `compare` func if given
 
-## 15. Function and method for strings.
+## 15. Function and method for `strings`.
 
 - `capitalize(str)`: Capitalizes first letter of string.
 
@@ -299,9 +307,49 @@ To remove a list element, you can use either the `del` statement **if you know e
 
 - `sample(range(1000), 8)`: 8 random samples without replacement.
 
-## 17. JSON data in Python
+## 17. Function and methods for `dictionary`.
 
-1.  To work with a JSON string object, use "json.loads(), json.dumps()". Pay attention to the 's' before the left parentheses
+1.  Dictionary comprehension: `{key: value for (key, value) in iterable}`
+
+```python
+
+```
+
+**Built-in Dictionary functions and methods:**
+
+- `cmp(dict1, dict2)`: Compares elements of both dict.
+
+- `len(dict)`: Gives the total length of the dictionary. This would be equal to the number of items in the dictionary.
+
+- `str(dict)`: Produces a printable string representation of a dictionary
+
+- `type(variable)`: Returns the type of the passed variable. If passed variable is dictionary, then it would return a dictionary type.
+
+**Python includes following dictionary methods:**
+
+- `dict.clear()`: Removes all elements of dictionary dict
+
+- `dict.copy()`: Returns a shallow copy of dictionary dict
+
+- `dict.fromkeys(seq[, value])`: Create a new dictionary with keys from `seq` and values set to `value`.
+
+- `dict.get(key, default=None)`: For key key, returns value or default if key not in dictionary
+
+- `dict.has_key(key)`: Returns true if key in dictionary dict, false otherwise
+
+- `dict.items()`: Returns a list of dict's (key, value) tuple pairs
+
+- `dict.keys()`: Returns list of dictionary dict's keys
+
+- `dict.setdefault(key, default=None)`: Similar to get(), but will set dict[key]=default if key is not already in dict
+
+- `dict.update(dict2)`: Adds dictionary dict2's key-values pairs to dict
+
+- `dict.values()`: Returns list of dictionary dict's values
+
+## 18. JSON data in Python
+
+1.  To work with a JSON string object, use `json.loads()`, `json.dumps()`. Pay attention to the `s` before the left parentheses
 2.  The JSON decoder and endcoder are illustrated below:
 
 **JSON Decoder**
@@ -332,7 +380,7 @@ To remove a list element, you can use either the `del` statement **if you know e
 3.  When load and dump JSON files, use `json.load()`, `json.dump()`
 4.  If `open('file_path')` raises `IOError: [Error 2] No such file or directory: 'aa.bb'`, use `getcwd()` to double check the current working directory.
 
-## 18. Class and subclass
+## 19. Class and subclass
 
 - Do not forget constructor `__init__`
 - The `__str__` is a special built-in method can be overridden.
@@ -375,3 +423,7 @@ print(rommy.getSpecies())
 print(rommy.chasesCats())
 print("Does {0} , the {1}, chase cats? {2}".format(rommy.getName(), rommy.getSpecies(), rommy.chasesCats() ))
 ```
+
+## 20. Time complexity for basic operations on python data types.
+
+Refer to [this link for details](https://wiki.python.org/moin/TimeComplexity).
