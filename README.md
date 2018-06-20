@@ -13,7 +13,7 @@ Re-learning python basics
 
 For fundamentals, refer to [this post](https://www.tutorialspoint.com/python/python_interview_questions.htm).
 
-## 1. What are the python processing mode in python?
+## 1. What are the file processing mode in python?
 
 - `r` for reading only
 - `r+` opens for reading and writing (cannot truncate a file)
@@ -161,7 +161,7 @@ with open(file,'r') as myFile:
     count = 0
     for i in myFile:
         if i.isupper():
-            count++
+            count += 1
 
     print(count)
 ```
