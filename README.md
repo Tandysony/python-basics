@@ -1,6 +1,6 @@
-# python-basics
+# python-tips
 
-Re-learning python basics
+A summary of python tips
 
 ## Basic Concepts
 
